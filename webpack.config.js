@@ -10,7 +10,9 @@ module.exports = {
 		filename: 'index.js',
 		path: DIST_DIR
 	},
-	//devtool: 'eval',
+	devServer: {
+		port: process.env.PORT || 8080
+	},
 	module: {
 		rules: [
 			{
