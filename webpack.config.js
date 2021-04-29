@@ -1,6 +1,5 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
-const { ESBuildPlugin } = require('esbuild-loader')
 const BASE_DIR = path.join(__dirname, './src')
 const DIST_DIR = path.join(__dirname, './dist')
 
@@ -35,8 +34,5 @@ module.exports = {
 		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 		modules: [BASE_DIR, 'node_modules']
 	},
-	plugins: [
-		new ESBuildPlugin(),
-		new HTMLWebpackPlugin({ template: './src/index.html' })
-	]
+	plugins: [new HTMLWebpackPlugin({ template: './src/index.html' })]
 }
