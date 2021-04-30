@@ -1,5 +1,6 @@
 const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
+const Dotenv = require('dotenv-webpack')
 const BASE_DIR = path.join(__dirname, './src')
 const DIST_DIR = path.join(__dirname, './dist')
 
@@ -34,5 +35,8 @@ module.exports = {
 		extensions: ['.tsx', '.ts', '.js', '.jsx'],
 		modules: [BASE_DIR, 'node_modules']
 	},
-	plugins: [new HTMLWebpackPlugin({ template: './src/index.html' })]
+	plugins: [
+		new Dotenv(),
+		new HTMLWebpackPlugin({ template: './src/index.html' })
+	]
 }
