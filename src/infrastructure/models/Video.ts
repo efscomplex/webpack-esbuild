@@ -1,1 +1,4 @@
-export interface Video {}
+export interface VideoModel {
+  timestamp: number
+  title: string
+}
