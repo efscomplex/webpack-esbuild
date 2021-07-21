@@ -1,8 +1,9 @@
 {
-	"name": "webpack-esbuild",
+	"name": "@easydev/webpack-esbuild",
 	"version": "1.0.0",
 	"description": "react bundler with webpack and esbuild-loader",
 	"main": "dist/index.js",
+	"private": true,
 	"scripts": {
 		"build": "webpack --mode production",
 		"dev": "webpack serve --mode development",

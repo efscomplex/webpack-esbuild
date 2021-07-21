@@ -5,7 +5,7 @@ const BASE_DIR = path.join(__dirname, './src')
 const DIST_DIR = path.join(__dirname, './dist')
 
 module.exports = {
-	entry: path.resolve(__dirname, './src/www/index.tsx'),
+	entry: path.resolve(__dirname, './src/index.tsx'),
 	output: {
 		filename: 'index.js',
 		path: DIST_DIR
@@ -37,6 +37,6 @@ module.exports = {
 	},
 	plugins: [
 		//new Dotenv(),
-		new HTMLWebpackPlugin({ template: './src/www/index.html' })
+		new HTMLWebpackPlugin({ template: './src/index.html' })
 	]
 }
