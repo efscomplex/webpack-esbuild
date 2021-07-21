@@ -3,6 +3,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin')
 //const Dotenv = require('dotenv-webpack')
 const BASE_DIR = path.join(__dirname, './src')
 const DIST_DIR = path.join(__dirname, './dist')
+const { ModuleFederationPlugin } = require('webpack').container
 
 module.exports = {
 	entry: path.resolve(__dirname, './src/index.tsx'),
@@ -37,6 +38,16 @@ module.exports = {
 	},
 	plugins: [
 		//new Dotenv(),
-		new HTMLWebpackPlugin({ template: './src/index.html' })
+		new HTMLWebpackPlugin({ template: './src/index.html' }),
+		new ModuleFederationPlugin({
+			filename: 'web-app'
+			/* remotes: {
+				page: 'about@http://localhost:3001/aboutEntry.js'
+			},
+			exposes: {
+				'./About': './src/components/About'
+			},
+			shared: require('./package.json').dependencies */
+		})
 	]
 }
